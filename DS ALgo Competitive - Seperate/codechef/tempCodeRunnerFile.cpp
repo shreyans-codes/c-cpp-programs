@@ -1,0 +1,1 @@
+int length = sizeof(array)/sizeof(array[0]);
