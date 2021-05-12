@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-#define RC = 2;
+#define RC 2
 
 class Matrix {
     public:
