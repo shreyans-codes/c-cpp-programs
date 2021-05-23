@@ -5,7 +5,8 @@
         "algorithm": "cpp",
         "chrono": "cpp",
         "complex": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "cmath": "cpp"
     },
     "C_Cpp.errorSquiggles": "Enabled"
 }
