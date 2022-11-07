@@ -10,11 +10,36 @@
     ? Let not the fruits of action be your motive, nor let your attachment be to
     ? inaction
 */
+//* Link: https://cses.fi/problemset/task/1633
 #include <bits/stdc++.h>
 #include <stdio.h>
 
 #define ll long long
+#define ull unsigned long long
 using namespace std;
+
+vector<int> dice(1000000, 0);
+int sum = 0;
+
+ull calcCombinations(int value)
+{
+    if (dice[value] != 0)
+    {
+        return dice[value];
+    }
+    else
+    {
+        for (int i = 1; i <= 6; i++)
+        {
+            if (value - i >= 0)
+            {
+                dice[value] += calcCombinations(value - i);
+                dice[value] %= 1000000007;
+            }
+        }
+    }
+    return dice[value];
+}
 
 int main()
 {
@@ -24,26 +49,9 @@ int main()
 #endif
     ll n;
     cin >> n;
-    ll arr[n];
-    for (ll i = 0; i < n; i++)
-    {
-        cin >> arr[i];
-    }
-
+    dice[0] = 1;
+    ull ans = calcCombinations(n);
+    // ans = ans % 1000000007;
+    cout << ans << endl;
     return 0;
 }
-
-/*
-#include <bits/stdc++.h>
-    #include <stdio.h>
-    using namespace std;
-   int main()
-    {
-        fast();
-        int t; cin>>t;
-        for(int i=0;i<t;i++)
-            solve(i);
-
-        return 0;
-    }
-*/

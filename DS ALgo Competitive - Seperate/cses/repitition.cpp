@@ -7,43 +7,22 @@
 
     ? The meaning of the verse is :—
     ? You have the right to work only but never to its fruits.
-    ? Let not the fruits of action be your motive, nor let your attachment be to
-    ? inaction
+    ? Let not athe fruits of action be your motive, nor let your attachment be to inaction
 */
 #include <bits/stdc++.h>
-#include <stdio.h>
-
 #define ll long long
 using namespace std;
 
 int main()
 {
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-    ll n;
-    cin >> n;
-    ll arr[n];
-    for (ll i = 0; i < n; i++)
+    string inp;
+    getline(cin, inp);
+    int n = inp.length(), mL = 1, maxL = 1;
+    for (int i = 1; i < n; i++)
     {
-        cin >> arr[i];
+        inp[i] == inp[i - 1] ? mL++ : mL = 1;
+        maxL < mL ? maxL = mL : maxL = maxL;
     }
-
+    cout << maxL << endl;
     return 0;
 }
-
-/*
-#include <bits/stdc++.h>
-    #include <stdio.h>
-    using namespace std;
-   int main()
-    {
-        fast();
-        int t; cin>>t;
-        for(int i=0;i<t;i++)
-            solve(i);
-
-        return 0;
-    }
-*/

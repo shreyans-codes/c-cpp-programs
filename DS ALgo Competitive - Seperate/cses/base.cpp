@@ -14,6 +14,8 @@
 #include <stdio.h>
 
 #define ll long long
+#define ull unsigned long long
+
 using namespace std;
 
 int main()
@@ -32,18 +34,3 @@ int main()
 
     return 0;
 }
-
-/*
-#include <bits/stdc++.h>
-    #include <stdio.h>
-    using namespace std;
-   int main()
-    {
-        fast();
-        int t; cin>>t;
-        for(int i=0;i<t;i++)
-            solve(i);
-
-        return 0;
-    }
-*/

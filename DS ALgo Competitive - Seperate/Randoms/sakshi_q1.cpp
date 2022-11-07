@@ -22,28 +22,23 @@ int main()
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-    ll n;
-    cin >> n;
+    ll n, k;
+    cin >> n >> k;
     ll arr[n];
     for (ll i = 0; i < n; i++)
     {
         cin >> arr[i];
     }
-
+    ll temp = arr[k - 1], temp2 = arr[0];
+    for (ll i = 0; i < k; i++)
+    {
+        temp2 = arr[i];
+        arr[i] = temp;
+        temp = temp2;
+    }
+    for (ll i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
     return 0;
 }
-
-/*
-#include <bits/stdc++.h>
-    #include <stdio.h>
-    using namespace std;
-   int main()
-    {
-        fast();
-        int t; cin>>t;
-        for(int i=0;i<t;i++)
-            solve(i);
-
-        return 0;
-    }
-*/

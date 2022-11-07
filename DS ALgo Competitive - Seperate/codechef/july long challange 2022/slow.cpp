@@ -14,6 +14,8 @@
 #include <stdio.h>
 
 #define ll long long
+#define ull unsigned long long
+
 using namespace std;
 
 int main()
@@ -22,28 +24,29 @@ int main()
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-    ll n;
-    cin >> n;
-    ll arr[n];
-    for (ll i = 0; i < n; i++)
+    int t;
+    cin >> t;
+    while (t--)
     {
-        cin >> arr[i];
+        ll mT, mN, sN;
+        ll ans;
+        cin >> mT >> mN >> sN;
+        ll itMul = sN / mN, rem = sN % mN;
+        rem > 0 ? itMul++ : itMul = itMul;
+        if (itMul > mT)
+        {
+            ans = (mN * mN) * mT;
+            cout << ans << endl;
+            continue;
+        }
+        else
+        {
+            rem > 0 ? itMul-- : itMul = itMul;
+            ans = (mN * mN) * itMul + (rem * rem);
+            cout << ans << endl;
+            continue;
+        }
     }
 
     return 0;
 }
-
-/*
-#include <bits/stdc++.h>
-    #include <stdio.h>
-    using namespace std;
-   int main()
-    {
-        fast();
-        int t; cin>>t;
-        for(int i=0;i<t;i++)
-            solve(i);
-
-        return 0;
-    }
-*/

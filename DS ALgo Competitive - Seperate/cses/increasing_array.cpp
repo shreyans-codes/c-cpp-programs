@@ -29,21 +29,18 @@ int main()
     {
         cin >> arr[i];
     }
+    ll amt = 0;
+    for (int i = 0; i < (n - 1); i++)
+    {
+        if (arr[i] > arr[i + 1])
+        {
+            amt += (arr[i] - arr[i + 1]);
+            arr[i + 1] = arr[i];
+        }
+
+        // cout << arr[i] << "---" << amt << endl;
+    }
+    cout << amt << endl;
 
     return 0;
 }
-
-/*
-#include <bits/stdc++.h>
-    #include <stdio.h>
-    using namespace std;
-   int main()
-    {
-        fast();
-        int t; cin>>t;
-        for(int i=0;i<t;i++)
-            solve(i);
-
-        return 0;
-    }
-*/

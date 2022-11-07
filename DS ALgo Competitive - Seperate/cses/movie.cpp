@@ -24,26 +24,23 @@ int main()
 #endif
     ll n;
     cin >> n;
-    ll arr[n];
+    int x, y, movCount = 1, track;
+    vector<pair<int, int>> s;
     for (ll i = 0; i < n; i++)
     {
-        cin >> arr[i];
+        cin >> x >> y;
+        s.push_back({y, x});
     }
-
+    sort(s.begin(), s.end());
+    track = s[0].first;
+    //* Idea: Calc movie distance and sort on that basis
+    for (ll i = 1; i < n; i++)
+    {
+        if (s[i].second < track)
+            continue;
+        track = s[i].first;
+        movCount++;
+    }
+    cout << movCount << endl;
     return 0;
 }
-
-/*
-#include <bits/stdc++.h>
-    #include <stdio.h>
-    using namespace std;
-   int main()
-    {
-        fast();
-        int t; cin>>t;
-        for(int i=0;i<t;i++)
-            solve(i);
-
-        return 0;
-    }
-*/

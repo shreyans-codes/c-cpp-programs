@@ -1,0 +1,1 @@
+d for " << value << " with " << dice[

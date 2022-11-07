@@ -14,36 +14,32 @@
 #include <stdio.h>
 
 #define ll long long
+#define ull unsigned long long
+
 using namespace std;
 
 int main()
 {
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-    ll n;
-    cin >> n;
-    ll arr[n];
-    for (ll i = 0; i < n; i++)
+    // #ifndef ONLINE_JUDGE
+    //     freopen("input.txt", "r", stdin);
+    //     freopen("output.txt", "w", stdout);
+    // #endif
+    int t, n;
+    cin >> t;
+    while (t--)
     {
-        cin >> arr[i];
+        cin >> n;
+        int arr[n], arr1[n];
+        for (int i = 0; i < n; i++)
+        {
+            cin >> arr[i];
+            arr1[n - i - 1] = arr[i];
+        }
+        for (int i = 0; i < n; i++)
+        {
+            cout << arr1[i] << " ";
+        }
     }
 
     return 0;
 }
-
-/*
-#include <bits/stdc++.h>
-    #include <stdio.h>
-    using namespace std;
-   int main()
-    {
-        fast();
-        int t; cin>>t;
-        for(int i=0;i<t;i++)
-            solve(i);
-
-        return 0;
-    }
-*/

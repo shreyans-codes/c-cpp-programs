@@ -14,6 +14,8 @@
 #include <stdio.h>
 
 #define ll long long
+#define ull unsigned long long
+
 using namespace std;
 
 int main()
@@ -22,28 +24,24 @@ int main()
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-    ll n;
-    cin >> n;
-    ll arr[n];
-    for (ll i = 0; i < n; i++)
+    int t;
+    cin >> t;
+    while (t--)
     {
-        cin >> arr[i];
+        int n, x, diff = 0, ans;
+        cin >> n >> x;
+        if (n < x)
+        {
+            cout << 0 << endl;
+            continue;
+        }
+        diff = n - x;
+        ans = diff / 4;
+        diff -= (4 * ans);
+        if (diff > 0 && diff < 4)
+            ans++;
+        cout << ans << endl;
     }
 
     return 0;
 }
-
-/*
-#include <bits/stdc++.h>
-    #include <stdio.h>
-    using namespace std;
-   int main()
-    {
-        fast();
-        int t; cin>>t;
-        for(int i=0;i<t;i++)
-            solve(i);
-
-        return 0;
-    }
-*/
