@@ -1,15 +1,3 @@
-/*
-    * कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।
-    * मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥
-
-    ! Karmanye vadhikaraste Ma Phaleshu Kadachana,
-    ! Ma Karmaphalaheturbhurma Te Sangostvakarmani,
-
-    ? The meaning of the verse is :—
-    ? You have the right only to work but never to its fruits.
-    ? Let not the fruits of action be your motive, nor let your attachment be to
-    ? inaction
-*/
 #include <bits/stdc++.h>
 
 #define ll long long
@@ -50,6 +38,7 @@ Node *insertIntoBST(Node *root, int data)
 
 void takeInput(Node *&root)
 {
+    cout << "Enter node values [use -1 to stop]" << endl;
     int data;
     cin >> data;
     while (data != -1)
@@ -57,29 +46,6 @@ void takeInput(Node *&root)
         //? update root to point to new tree
         root = insertIntoBST(root, data);
         cin >> data;
-    }
-}
-
-void levelOrder(Node *root)
-{
-    if (root == NULL)
-        return;
-    queue<Node *> q;
-    q.push(root);
-    while (!q.empty())
-    {
-        int size = q.size();
-        for (int i = 0; i < size; i++)
-        {
-            Node *frontNode = q.front();
-            cout << frontNode->data << " ";
-            if (frontNode->left)
-                q.push(frontNode->left);
-            if (frontNode->right)
-                q.push(frontNode->right);
-            q.pop();
-        }
-        cout << endl;
     }
 }
 
@@ -92,40 +58,6 @@ void preOrder(Node *root)
         preOrder(root->left);
     if (root->right)
         preOrder(root->right);
-}
-
-void postOrder(Node *root)
-{
-    if (root == NULL)
-        return;
-    if (root->left)
-        postOrder(root->left);
-    if (root->right)
-        postOrder(root->right);
-    cout << root->data << " ";
-}
-
-void inOrder(Node *root)
-{
-    if (root == NULL)
-        return;
-    if (root->left)
-        inOrder(root->left);
-    cout << root->data << " ";
-    if (root->right)
-        inOrder(root->right);
-}
-
-bool searchBST(Node *root, int data)
-{
-    if (root == NULL)
-        return false;
-    if (root->data == data)
-        return true;
-    if (root->data > data)
-        return searchBST(root->left, data);
-    else
-        return searchBST(root->right, data);
 }
 
 int findMin(Node *root)
@@ -196,36 +128,23 @@ Node *deleteNode(Node *root, int data)
 
 int main()
 {
-    // #ifndef ONLINE_JUDGE
-    //     freopen("input.txt", "r", stdin);
-    //     freopen("output.txt", "w", stdout);
-    // #endif
-
     Node *root = NULL;
     takeInput(root);
-    // preOrder(root);
-    // cout << endl;
-    // postOrder(root);
-    // cout << endl;
-    // inOrder(root);
-    // cout << endl;
-    // levelOrder(root);
-    int data;
-    // cout << "Enter data to search: ";
-    cin >> data;
-    if (searchBST(root, data))
-        cout << "Found the element" << endl;
-    else
-        cout << "Not found" << endl;
     if (root != NULL)
     {
         pair<int, int> minMax = findMinMax(root);
         cout << "Min = " << minMax.first << endl;
         cout << "Max = " << minMax.second << endl;
     }
-    // cout << "Enter data to delete: ";
+
+    int data;
+    cout << "Enter data to delete: ";
     cin >> data;
+    cout << "Pre order before deletion: " << endl;
+    preOrder(root);
+    cout << endl;
     deleteNode(root, data);
-    levelOrder(root);
+    cout << "Pre order after deletion: " << endl;
+    preOrder(root);
     return 0;
 }

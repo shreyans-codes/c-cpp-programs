@@ -1,0 +1,12 @@
+With adjacency matrix
+1 is conntected to: 2 
+2 is conntected to: 1 3 4 
+3 is conntected to: 2 5 
+4 is conntected to: 2 5 
+5 is conntected to: 3 4 
+With adjacency list
+1 is connected to:  2
+2 is connected to:  1 4 3
+3 is connected to:  2 5
+4 is connected to:  2 5
+5 is connected to:  4 3
