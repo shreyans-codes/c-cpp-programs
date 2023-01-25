@@ -1,4 +1,11 @@
+Inserted 2 at 1
+Inserted 3 at 2
 Dequeued 1
-Underflow encountered
-Underflow encountered
-Underflow encountered
+Dequeued 2
+3
+Here 2 Dequeued 3
+Here 0 Dequeued 4
+Underflow encountered!
+Underflow encountered!
+Queue is empty
+-1
