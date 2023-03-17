@@ -1,9 +1,9 @@
 --Q1 :
 declare
-first number : = 0;
-second number : = 1;
+first number:=0;
+second number:=1;
 temp number;
-n number : = 10;
+n number:=10;
 i number;
 
 begin
@@ -12,9 +12,9 @@ dbms_output.put_line(first);
 dbms_output.put_line(second);
 for
     i in 2..n loop
-        temp : = first + second;
-first : = second;
-second : = temp;
+        temp:=first + second;
+first:=second;
+second:=temp;
 dbms_output.put_line(temp);
 end loop;
 end;
@@ -30,9 +30,9 @@ begin
 for cnt_val in (select * from student)
 loop
     sname:=cnt_val.name;
-    m1 : = cnt_val.DCN;
-    m2 : = cnt_val.DBMS;
-    m3 : = cnt_val.DSA;
+    m1:=cnt_val.DCN;
+    m2:=cnt_val.DBMS;
+    m3:=cnt_val.DSA;
     dbms_output.put_line(sname || ' Marks: ');
     if (m1 > 90)
         then
@@ -83,8 +83,7 @@ n number;
 i number;		
 temp number;
 begin
-n:=&n;				
-i := 2;
+n:=&n;
 temp := 1;
 for i in 2..n/2
 loop
@@ -115,9 +114,9 @@ for cnt_val in (select * from student)
 dbms_output.put_line('Name | DCN | DBMS | DSA')
 loop
     sname:=cnt_val.name;
-    m1 : = cnt_val.DCN;
-    m2 : = cnt_val.DBMS;
-    m3 : = cnt_val.DSA;
+    m1:=cnt_val.DCN;
+    m2:=cnt_val.DBMS;
+    m3:=cnt_val.DSA;
     dbms_output.put_line(sname||' '||m1||' '||m2||' '||m3||' '||);
 end loop;
 end;

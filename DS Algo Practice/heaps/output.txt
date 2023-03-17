@@ -1,0 +1,21 @@
+1 
+2 1 
+3 1 2 
+4 3 2 1 
+5 4 2 1 3 
+Sorted Heap: 1 2 3 4 5 
+Removing 5
+After removing: 
+4 3 2 1 
+Removing 4
+After removing: 
+3 1 2 
+Removing 3
+After removing: 
+2 1 
+Removing 2
+After removing: 
+1 
+Removing 1
+After removing: 
+Heap is empty!
